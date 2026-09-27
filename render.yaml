@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: ai-health-monitor
+    env: node
+    plan: free
+    buildCommand: npm install --include=dev && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: SMTP_EMAIL
+        sync: false
+      - key: SMTP_APP_PASSWORD
+        sync: false
+      - key: BREVO_API_KEY
+        sync: false
+      - key: RESEND_API_KEY
+        sync: false
+
